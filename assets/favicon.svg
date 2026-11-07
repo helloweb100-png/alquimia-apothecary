@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Alquimia Apothecary">
+  <rect width="64" height="64" rx="14" fill="#F7F5F0"/>
+  <g fill="none" stroke="#1D1A1B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M32 7 L54 19.5 V44.5 L32 57 L10 44.5 V19.5 Z"/>
+    <path d="M32 21 L21.5 43 M32 21 L42.5 43" />
+  </g>
+  <path d="M32 46 C28 42.5 28 37.5 32 34 C36 37.5 36 42.5 32 46 Z" fill="#0081BC"/>
+</svg>
