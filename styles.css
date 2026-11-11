@@ -197,10 +197,9 @@ h3 { font-family: var(--ff-display); font-weight: 400; color: var(--ink); line-h
 .cargador__half--top { top: 0; }
 .cargador__half--bottom { bottom: 0; }
 .cargador__core { position: relative; display: grid; justify-items: center; gap: 18px; width: min(86vw, 380px); transition: visibility 0s .2s; }
-.cargador__logo { position: relative; width: min(72vw, 340px); aspect-ratio: 1; }
+.cargador__logo { position: relative; width: min(72vw, 340px); aspect-ratio: 880 / 397; }
 .cargador__logo img {
-  width: 100%; height: 100%; object-fit: contain;
-  filter: invert(1); mix-blend-mode: screen;
+  width: 100%; height: 100%; object-fit: contain; border-radius: 14px; background: #fff;
   clip-path: inset(0 0 100% 0);
   animation: reveal-down 1.45s var(--ease-io) .15s forwards;
 }
@@ -246,10 +245,7 @@ h3 { font-family: var(--ff-display); font-weight: 400; color: var(--ink); line-h
 .is-scrolled .site-header__bar::before { background: rgba(247, 245, 240, .9); box-shadow: 0 14px 44px -18px rgba(29, 26, 27, .55); }
 
 .brandmark { position: relative; z-index: 3; display: inline-flex; align-items: center; gap: 12px; color: var(--ink); transition: color .4s; }
-.brandmark__icon { width: 30px; height: 34px; }
-.brandmark__text { display: grid; line-height: 1; }
-.brandmark__text b { font: 500 .96rem/1 var(--ff-sans); letter-spacing: .3em; text-transform: uppercase; }
-.brandmark__text small { margin-top: 5px; font: 400 .6rem/1 var(--ff-sans); letter-spacing: .46em; text-transform: uppercase; color: var(--mute); transition: color .4s; }
+.brandmark__logo { display: block; width: auto; height: 44px; }
 
 .burger {
   position: relative; z-index: 3; width: 46px; height: 46px; border: 0; border-radius: 50%;
@@ -273,7 +269,7 @@ h3 { font-family: var(--ff-display); font-weight: 400; color: var(--ink); line-h
 .nav::after { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5; background: radial-gradient(60% 40% at 80% 90%, rgba(10, 155, 225, .35), transparent 70%); }
 .menu-open .nav { visibility: visible; clip-path: inset(0); transition: clip-path .8s var(--ease-io), visibility 0s; }
 .menu-open .brandmark { color: #fff; }
-.menu-open .brandmark__text small { color: rgba(255, 255, 255, .6); }
+.menu-open .brandmark__logo { background: #fff; border-radius: 8px; padding: 2px 6px; }
 .nav__list { display: grid; gap: 6px; }
 .nav__list a {
   display: block; padding: 4px 0; font: 400 clamp(2.2rem, 11vw, 3.4rem)/1.05 var(--ff-display);
@@ -542,8 +538,8 @@ body.menu-open-lock { overflow: hidden; }
 .brand__logo--alquimia img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 47%; }
 .brand__logo--ca { width: 190px; }
 .brand__logo--ca img { width: 100%; aspect-ratio: 1943 / 1405; object-fit: contain; }
-.brand__logo--qm { width: 250px; aspect-ratio: 16 / 7; overflow: hidden; }
-.brand__logo--qm img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 27%; }
+.brand__logo--qm { width: 250px; }
+.brand__logo--qm img { width: 100%; height: auto; }
 
 .brand__media { position: relative; margin: 0; align-self: center; border-radius: 22px; overflow: hidden; box-shadow: 0 36px 70px -34px rgba(29, 26, 27, .6); transform: rotate(var(--rot, 0deg)); transition: transform .8s var(--ease); }
 .brand__media img { width: 100%; height: auto; transition: transform 1.2s var(--ease); }
@@ -575,7 +571,7 @@ body.menu-open-lock { overflow: hidden; }
 .ring { position: absolute; left: 50%; top: 46%; width: 0; height: 0; transform-style: preserve-3d; transform: translateZ(calc(var(--R) * -1)) rotateY(var(--ry, 0deg)); }
 .ring__item {
   position: absolute; left: calc(var(--cw) / -2); top: calc(var(--ch) / -2); width: var(--cw); height: var(--ch);
-  transform: rotateY(calc(var(--i) * 60deg)) translateZ(var(--R));
+  transform: rotateY(calc(var(--i) * 360deg / 7)) translateZ(var(--R));
   -webkit-backface-visibility: hidden; backface-visibility: hidden;
 }
 .pcard {
@@ -586,6 +582,11 @@ body.menu-open-lock { overflow: hidden; }
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .16), 0 40px 70px -40px #000;
 }
 .pcard::before { content: ""; position: absolute; left: 50%; top: 42%; width: 130%; aspect-ratio: 1; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(10, 155, 225, .3), transparent 60%); }
+.pcard--esp { padding-top: 14px; }
+.esp { position: relative; flex: 1; display: grid; align-content: center; justify-items: center; gap: 22px; text-align: center; }
+.esp__ico { width: 68px; height: 76px; display: grid; place-items: center; background: rgba(10, 155, 225, .16); clip-path: var(--hex); color: var(--blue-2); }
+.esp__ico svg { width: 30px; height: 30px; }
+.esp b { font: 400 clamp(1.55rem, 2.2vw, 2rem)/1.05 var(--ff-display); color: #fff; }
 .pcard__name { position: relative; font: 500 .62rem/1.2 var(--ff-mono); letter-spacing: .14em; text-transform: uppercase; color: rgba(255, 255, 255, .72); text-align: center; }
 
 .bottle { position: relative; width: 62%; aspect-ratio: 1 / 2; container-type: inline-size; filter: drop-shadow(0 26px 22px rgba(0, 0, 0, .5)); animation: bob 6s ease-in-out infinite; margin-top: 6px; }
@@ -762,14 +763,14 @@ html:not(.anime-on) .honey__row:nth-child(3) .hex { animation-delay: 2.2s; }
 /* ---------- 19. Pie ---------- */
 .footer { position: relative; overflow: clip; background: var(--ink); color: rgba(255, 255, 255, .72); padding-top: clamp(54px, 8vw, 100px); border-top: 1px solid rgba(255, 255, 255, .08); }
 .footer__top { display: grid; gap: 40px; }
-.footer__logo { width: 190px; aspect-ratio: 5 / 4; overflow: hidden; margin-bottom: 18px; }
-.footer__logo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 47%; filter: invert(1); mix-blend-mode: screen; }
+.footer__logo { width: 190px; margin-bottom: 18px; }
+.footer__logo img { width: 100%; height: auto; border-radius: 10px; background: #fff; }
 .footer__brand p { max-width: 36ch; }
 .footer__nav h2 { margin-bottom: 16px; font: 500 .66rem/1 var(--ff-mono); letter-spacing: .22em; text-transform: uppercase; color: var(--blue-2); }
 .footer__nav ul { display: grid; gap: 10px; }
 .footer__nav a { transition: color .3s; }
 .footer__nav a:hover { color: #fff; }
-.footer__giant { margin: clamp(30px, 6vw, 80px) 0 0; font: 400 clamp(4rem, 23vw, 22rem)/.78 var(--ff-display); letter-spacing: -.02em; color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, .16); text-align: center; user-select: none; white-space: nowrap; overflow: hidden; padding-bottom: .1em; }
+.footer__giant { margin: calc(clamp(30px, 6vw, 80px) - .14em) 0 0; font: 400 clamp(4rem, 23vw, 22rem)/.78 var(--ff-display); letter-spacing: -.02em; color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, .16); text-align: center; user-select: none; white-space: nowrap; overflow: hidden; padding-top: .14em; padding-bottom: .1em; }
 .footer__bottom { display: grid; gap: 6px; padding: 22px 0 96px; border-top: 1px solid rgba(255, 255, 255, .1); font-size: .82rem; color: rgba(255, 255, 255, .5); }
 
 /* ---------- 20. WhatsApp flotante ---------- */
